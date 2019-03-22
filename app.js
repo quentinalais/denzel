@@ -18,23 +18,6 @@ app.use(BodyParser.urlencoded({ extended: true }));
 
 app.use(BodyParser.json());
 
-const {queryType} = require('./graphqueries/query.js');
-
-//setting up the port number and express app
-const port = 9292;
-
-
- // Define the Schema
-const schema = new GraphQLSchema({ query: queryType });
-
-//Setup the nodejs GraphQL server
-app.use('/graphql', graphqlHTTP({
-    schema: schema,
-    graphiql: true,
-}));
-
-app.listen(port);
-console.log(`GraphQL Server Running at localhost:${port}`);
 
 
 
@@ -48,11 +31,6 @@ console.log(`GraphQL Server Running at localhost:${port}`);
 
 
 
-
-
-
-
-/*
 var database, collection;
 
 app.listen(9292, () => {
@@ -127,6 +105,6 @@ app.post("/movies/:id", (request, response) => {
         response.send(result.result);
     });
 });
-*/
+
 
 
