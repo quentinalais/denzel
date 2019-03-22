@@ -1,0 +1,14 @@
+curl -X POST \
+    -H 'content-type:application/json' \
+    -d '{"firstname":"Quentin","lastname":"Raboy"}' \
+    http://localhost:9292/person
+
+curl -X GET http://localhost:9292/people
+
+curl -X GET http://localhost:9292/movies/populate
+
+curl -X GET http://localhost:9292/movies
+
+curl -H "Accept: application/json" http://localhost:9292/movies/tt0328107
+
+curl -H "Accept: application/json" http://localhost:9292/movies/search?metascore=77
